@@ -51,10 +51,10 @@
             </div>
             <div class="right-links">
                 <div>
-                    <a href="#"><i class="fas fa-search"></i><span> &nbsp;Recherche</span></a>
+                    <a href="#" id="recherche"><i class="fas fa-search"></i><span> &nbsp;Recherche</span></a>
                 </div>
                 <div>
-                    <a href="#"><i class="far fa-heart"></i><span>  &nbsp;Votre sélection</span></a>
+                    <a href="#" id="selectionLink"><i class="far fa-heart"></i><span>  &nbsp;Votre sélection</span></a>
                 </div>
             </div>
         </div>
@@ -85,7 +85,7 @@
                 <section class="middle">
                     <div class="watches-scroll">
                         <div class="watch-container">
-
+                            <div class="scroll-watch-container">
                                 <div class="watch-box">
                                         <div>
                                             <img src="assets/images/lady-datejust.jpg" alt="lady-datejust watch image">
@@ -235,6 +235,7 @@
                                             <span class="watch-description">Un hommage à l'aviation</span>
                                         </div>
                                 </div>
+                            <div>
                         </div>
                     </div>
                     <div class="section-links">
@@ -293,7 +294,7 @@
                 </a>
             </div>
             <div class="search-pane-close">
-                <a href="" class="search-pane-close-btn">&#9587;</a>
+                <a href="#" class="search-pane-close-btn">&#9587;</a>
             </div>
         </div>
         <div class="search-form">
@@ -308,9 +309,10 @@
         </div>
     </div>
 
+    <!-- SELECTION PANE -->
     <div class="selection-pane">
         <div class="selection-pane-close">
-            <a href="" class="search-pane-close-btn">&#9587;</a>
+            <a href="#" class="selection-pane-close-btn">&#9587;</a>
         </div>
         <div class="selection-container">
             <h2>VOTRE SÉLECTION</h2>
@@ -322,6 +324,7 @@
         </div>
     </div>
 
+    <!-- PRESENTATION -->
     <div class="presentation">
         <video autoplay muted loop>
             <source src="assets/videos/Rolex-Oyster-Perpetual-41.mp4" type="video/mp4">

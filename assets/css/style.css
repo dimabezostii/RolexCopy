@@ -28,6 +28,10 @@ body{
     height: 300vh;
 }
 
+body.blockScroll {
+    overflow: hidden;
+}
+
 /* HEADER  */
 
 header {
@@ -36,7 +40,11 @@ header {
     top: 0;
     left: 0;
     z-index: 10;
-    transition: 300ms ease-out;
+    transition: 350ms ease-out;
+}
+
+header.hide{
+    top: -80px;
 }
 
 header>div#header-container {
@@ -139,27 +147,7 @@ header:hover>#header-container>.logo-container>a>svg>g{
 
 
 
-
-
-
-
-
-
-
-
-
-
-/* PANE  */
-div#pane {
-    background-color: rgb(33, 33, 33);
-    height: 100vh;
-    position: fixed;
-    width: 50%;
-    z-index: 10;
-    overflow-x: hidden;
-    display: none;
-}
-
+/* OVERLAY */
 div.pane-overlay{
     position: absolute;
     top: 0;
@@ -169,6 +157,27 @@ div.pane-overlay{
     background: rgba(0, 0, 0, 0.8);
     z-index: 8;
     display: none;
+}
+
+div.pane-overlay.active{
+    display: block;
+}
+
+
+/* PANE  */
+div#pane {
+    background-color: rgb(33, 33, 33);
+    height: 100vh;
+    position: fixed;
+    left: -100%;
+    width: 50%;
+    z-index: 10;
+    overflow-x: hidden;
+    transition: 400ms ease-out;
+}
+
+div#pane.active{
+    left: 0;
 }
 
 div#pane::-webkit-scrollbar{
@@ -222,23 +231,23 @@ div.watches-scroll {
     padding-right: 5vw;
 }
 
-div.watch-container {
+.scroll-watch-container {
     display: flex;
     overflow-x: scroll;
     padding-bottom: 15px;
     margin-bottom: 10px;
 }
 
-div.watch-container::-webkit-scrollbar{
+.scroll-watch-container::-webkit-scrollbar{
     height: 4px;
 }
 
-div.watch-container::-webkit-scrollbar-track {
+.scroll-watch-container::-webkit-scrollbar-track {
     background: #4D4D4D;
     border-radius: 10px;
 }
 
-div.watch-container::-webkit-scrollbar-thumb{
+.scroll-watch-container::-webkit-scrollbar-thumb{
     background: #FFFFFF;
     border-radius: 10px;
 }
@@ -320,11 +329,16 @@ section.bottom>div>a{
 /* SEARCH PANE HEADER  */
 div.search-pane{
     position: fixed;
+    top: -100vh;
     width: 100%;
     z-index: 10;
     padding: 0 5vw;
     background-color: #F8F8F8;
-    display: none;
+    transition: 350ms ease-out;
+}
+
+div.search-pane.show {
+    top: 0;
 }
 
 div.search-pane>div.search-pane-header>div.logo-container{
@@ -438,10 +452,14 @@ div.search-pane>div.search-form>form>a:hover{
     position: fixed;
     width: 50%;
     height: 100vh;
-    right: 0;
+    right: -100vw;
     background-color: #F8F8F8;
     z-index: 10;
-    display: none;
+    transition: 350ms ease-out;
+}
+
+.selection-pane.show{
+    right: 0;
 }
 
 .selection-pane>div.selection-pane-close{
