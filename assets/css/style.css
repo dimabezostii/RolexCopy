@@ -24,10 +24,6 @@ html {
     font-weight: var(--text-font-weight);
 }
 
-body{
-    height: 300vh;
-}
-
 body.blockScroll {
     overflow: hidden;
 }
